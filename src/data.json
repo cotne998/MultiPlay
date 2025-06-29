@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Tic Tac Toe",
+    "thumbnail": "/assets/thumbnail-tictactoe.jpg",
+    "route": "/main/home/tic-tac-toe"
+  },
+  {
+    "name": "Rock Paper Scissors",
+    "thumbnail": "/assets/thumbnail-rock.jpg",
+    "route": "/main/home/rock-paper-scissors"
+  },
+  {
+    "name": "Flip a coin",
+    "thumbnail": "/assets/thumbnail-flip.jpg",
+    "route": "/main/home/coin"
+  }
+]
