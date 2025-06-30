@@ -8,6 +8,7 @@ interface IMenuContext {
 interface INavigation {
   name: string;
   path: string;
+  image: string;
 }
 
 interface IPlayersContext {

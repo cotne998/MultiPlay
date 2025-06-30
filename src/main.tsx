@@ -7,6 +7,8 @@ import Intro from "./pages/Intro";
 import Home from "./pages/Home";
 import Tictactoe from "./pages/Tictactoe";
 import Rock from "./pages/Rock";
+import Coin from "./pages/Coin";
+import About from "./pages/About";
 
 const router = createBrowserRouter([
   {
@@ -31,7 +33,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/main/home/coin",
-        element: <Rock />,
+        element: <Coin />,
+      },
+      {
+        path: "/main/home/about",
+        element: <About />,
       },
     ],
   },

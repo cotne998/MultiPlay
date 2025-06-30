@@ -54,7 +54,7 @@ export default function Tictactoe() {
   };
 
   return (
-    <section className="flex flex-col items-center gap-10 p-10 h-[100vh]">
+    <section className="flex flex-col items-center gap-10 p-10 h-[100vh] xl:gap-20">
       <div className="flex gap-4 mb-6 ">
         <h1 className="text-[#F15D22] text-[20px] md:text-[32px] font-bold title">
           Tic <span className="text-white">Tac</span> Toe

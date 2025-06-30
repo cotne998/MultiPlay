@@ -11,9 +11,26 @@ const navigation: INavigation[] = [
   {
     name: "Home",
     path: "/main/home",
+    image: "/assets/icon-home.svg",
+  },
+  {
+    name: "Tic Tac Toe",
+    path: "/main/home/tic-tac-toe",
+    image: "/assets/icon-close.svg",
+  },
+  {
+    name: "Rock Paper Scissors",
+    path: "/main/home/rock-paper-scissors",
+    image: "/assets/icon-scissors.svg",
+  },
+  {
+    name: "Flip a coin",
+    image: "/assets/icon-flip.svg",
+    path: "/main/home/coin",
   },
   {
     name: "About",
+    image: "/assets/icon-about.svg",
     path: "/main/home/about",
   },
 ];
@@ -48,13 +65,13 @@ export default function Header() {
               }}
               alt="close icon"
               onClick={() => setDisplayMenu(false)}
-              className="w-[27px] cursor-pointer md:hidden"
+              className="w-[27px] cursor-pointer"
             />
           </AnimatePresence>
         ) : (
           <AnimatePresence>
             <motion.img
-              className="w-[27px] cursor-pointer md:hidden"
+              className="w-[27px] cursor-pointer"
               src={Menu}
               alt="menu icon"
               onClick={() => setDisplayMenu(true)}
@@ -66,7 +83,7 @@ export default function Header() {
         {displayMenu && (
           <>
             <motion.div
-              className="fixed inset-0 z-10  md:hidden"
+              className="fixed inset-0 z-10"
               initial={{ opacity: 0 }}
               animate={{ opacity: 0.2 }}
               exit={{ opacity: 0 }}
@@ -87,16 +104,27 @@ export default function Header() {
                 bounce: 1,
                 duration: 0.2,
               }}
-              className="fixed top-0 w-full bg-[#272727] p-5 pt-20 z-20  shadow-xl  md:hidden">
+              className="fixed top-0 w-full bg-[#272727] p-5 pt-20 z-20  shadow-xl">
               <ul className="flex flex-col gap-5">
                 {navigation.map((item, index) => (
-                  <li
-                    key={index}
-                    onClick={() => setDisplayMenu(false)}
-                    className="text-white flex items-center gap-2">
-                    <img src={item.path} alt="" className="w-[17px] " />
-                    <Link to={`${item.path}`}>{item.name}</Link>
-                  </li>
+                  <>
+                    <li
+                      key={index}
+                      onClick={() => setDisplayMenu(false)}
+                      className="text-white flex items-center gap-3">
+                      <img
+                        className="w-[20px]"
+                        src={item.image}
+                        alt={`${item.name} icon`}
+                      />
+
+                      <Link
+                        className="hover:text-[#F15D22] transition-[0.2s]"
+                        to={`${item.path}`}>
+                        {item.name}
+                      </Link>
+                    </li>
+                  </>
                 ))}
               </ul>
             </motion.nav>

@@ -92,24 +92,24 @@ export default function Rock() {
 
   return (
     <>
-      <section className="flex flex-col gap-15 p-5">
+      <section className="flex flex-col gap-15 p-5 md:w-[500px] md:m-auto md:gap-20">
         <div className="flex gap-5 justify-center">
           <button
             onClick={() => setIsTwoPlayers(false)}
             className={`text-white bg-${
               isTwoPlayers ? "[#3f3f3f]" : "[#F15D22]"
-            } px-5 py-[2px] rounded-[10px] cursor-pointer transition-[0.2s]`}>
+            }  px-5 py-[2px] rounded-[10px] cursor-pointer transition-[0.2s] md:text-[24px] md:px-7 md:py-[7px]`}>
             1 Player
           </button>
           <button
             onClick={() => setIsTwoPlayers(true)}
             className={`text-white bg-${
               isTwoPlayers ? "[#F15D22]" : "[#3f3f3f]"
-            } px-5 py-[2px] rounded-[10px] cursor-pointer transition-[0.2s]`}>
+            } px-5 py-[2px] rounded-[10px] cursor-pointer transition-[0.2s]  md:text-[24px] md:px-7 md:py-[7px]`}>
             2 Players
           </button>
         </div>
-        <div className="flex flex-col gap-1 text-white text-[12px]">
+        <div className="flex flex-col gap-1 text-white text-[12px] md:text-[18px] md:gap-5">
           {isTwoPlayers ? (
             <>
               <span className="title">
@@ -131,14 +131,14 @@ export default function Rock() {
             </>
           )}
         </div>
-        <div className="flex justify-center gap-7">
+        <div className="flex justify-center gap-7 md:gap-10">
           <img
             src={RockImg}
             alt="rock image"
             onClick={() =>
               isTwoPlayers ? handleTwoPlayersMove("rock") : handleMove("rock")
             }
-            className="w-[60px] h-[60px] bg-[#565656] rounded-[50%] p-2 cursor-pointer"
+            className="w-[60px] h-[60px] bg-[#565656] rounded-[50%] p-2 cursor-pointer md:w-[100px] md:h-[100px] md:p-5 hover:scale-[1.2] transition-[0.2s]"
           />
           <img
             src={PaperImg}
@@ -146,7 +146,7 @@ export default function Rock() {
             onClick={() =>
               isTwoPlayers ? handleTwoPlayersMove("paper") : handleMove("paper")
             }
-            className="w-[60px] h-[60px] bg-[#565656] rounded-[50%] p-2 cursor-pointer"
+            className="w-[60px] h-[60px] bg-[#565656] rounded-[50%] p-2 cursor-pointer md:w-[100px] md:h-[100px] md:p-5 hover:scale-[1.2] transition-[0.2s]"
           />
           <img
             src={ScissorsImg}
@@ -156,13 +156,13 @@ export default function Rock() {
                 ? handleTwoPlayersMove("scissors")
                 : handleMove("scissors")
             }
-            className="w-[60px] h-[60px] bg-[#565656] rounded-[50%] p-2 cursor-pointer"
+            className="w-[60px] h-[60px] bg-[#565656] rounded-[50%] p-2 cursor-pointer md:w-[100px] md:h-[100px] md:p-5 hover:scale-[1.2] transition-[0.2s]"
           />
         </div>
         <div className="flex justify-center">
           <button
             onClick={handleReset}
-            className="text-white bg-[#F15D22] text-[20px] px-10 py-[4px] cursor-pointer rounded-[10px]">
+            className="text-white font-semibold bg-[#F15D22] text-[20px] px-10 py-[4px] cursor-pointer rounded-[10px] md:text-[24px]">
             RESET
           </button>
         </div>
