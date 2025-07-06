@@ -59,6 +59,9 @@ export default function Home() {
                   <h2 className="text-center text-white text-[18px] xl:text-[28px]">
                     {item.name}
                   </h2>
+                  <p className="text-white text-[12px] p-2 xl:text-[14px]">
+                    {item.description}
+                  </p>
                 </div>
                 <Link
                   className="bg-[#F15D22] text-center p-[2px] text-white text-[13px] xl:text-[16px]  rounded-2xl w-[50%] cursor-pointer"

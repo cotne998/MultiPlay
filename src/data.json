@@ -1,16 +1,19 @@
 [
   {
     "name": "Tic Tac Toe",
+    "description": "A simple two-player game where players take turns placing Xs and Os on a 3×3 grid. The first player to align three symbols horizontally, vertically, or diagonally wins.",
     "thumbnail": "/assets/thumbnail-tictactoe.jpg",
     "route": "/main/home/tic-tac-toe"
   },
   {
     "name": "Rock Paper Scissors",
+    "description": "A quick and fun two-player game where each player chooses rock, paper, or scissors. Rock beats scissors, scissors beats paper, and paper beats rock. The player with the winning move takes the round!",
     "thumbnail": "/assets/thumbnail-rock.jpg",
     "route": "/main/home/rock-paper-scissors"
   },
   {
     "name": "Flip a coin",
+    "description": "A simple and fun game where you flip a virtual coin to get either heads or tails. Perfect for making quick decisions or testing your luck!",
     "thumbnail": "/assets/thumbnail-flip.jpg",
     "route": "/main/home/coin"
   }
