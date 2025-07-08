@@ -1,10 +1,12 @@
 import RockImg from "/assets/rock-emoji.png";
 import PaperImg from "/assets/paper-emoji.png";
 import ScissorsImg from "/assets/scissors-emoji.png";
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import { PLayersContext } from "./Layout";
 import { AnimatePresence, motion } from "framer-motion";
 import OtherGames from "../components/OtherGames";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export default function Rock() {
   const [currentMove, setCurrentMove] = useState<string>("");
@@ -13,6 +15,10 @@ export default function Rock() {
   const [result, setResult] = useState<string>("");
   const [yourScore, setYourScore] = useState<number>(0);
   const [computerScore, setComputerScore] = useState<number>(0);
+
+  useEffect(() => {
+    AOS.init({});
+  }, []);
 
   const { isTwoPlayers, setIsTwoPlayers } = useContext(PLayersContext);
 
@@ -93,7 +99,7 @@ export default function Rock() {
   return (
     <>
       <section className="flex flex-col gap-15 p-5 md:w-[500px] md:m-auto md:gap-20">
-        <div className="flex gap-5 justify-center">
+        <div data-aos="zoom-in" className="flex gap-5 justify-center">
           <button
             onClick={() => setIsTwoPlayers(false)}
             className={`text-white bg-${
@@ -109,7 +115,9 @@ export default function Rock() {
             2 Players
           </button>
         </div>
-        <div className="flex flex-col gap-1 text-white text-[12px] md:text-[18px] md:gap-5">
+        <div
+          data-aos="zoom-in"
+          className="flex flex-col gap-1 text-white text-[12px] md:text-[18px] md:gap-5">
           {isTwoPlayers ? (
             <>
               <span className="title">
@@ -131,7 +139,7 @@ export default function Rock() {
             </>
           )}
         </div>
-        <div className="flex justify-center gap-7 md:gap-10">
+        <div data-aos="zoom-in" className="flex justify-center gap-7 md:gap-10">
           <img
             src={RockImg}
             alt="rock image"
@@ -159,7 +167,7 @@ export default function Rock() {
             className="w-[60px] h-[60px] bg-[#565656] rounded-[50%] p-2 cursor-pointer md:w-[100px] md:h-[100px] md:p-5 hover:scale-[1.2] transition-[0.2s]"
           />
         </div>
-        <div className="flex justify-center">
+        <div data-aos="zoom-in" className="flex justify-center">
           <button
             onClick={handleReset}
             className="text-white font-semibold bg-[#F15D22] text-[20px] px-10 py-[4px] cursor-pointer rounded-[10px] md:text-[24px]">
@@ -180,10 +188,12 @@ export default function Rock() {
         )}
       </section>
       <div className="mt-30 flex flex-col gap-7">
-        <h1 className="title text-center text-white text-[20px]">
+        <h1
+          data-aos="zoom-in"
+          className="title text-center text-white text-[20px]">
           OTHER GAMES
         </h1>
-        <OtherGames />
+        <OtherGames data-aos="zoom-in" />
       </div>
     </>
   );

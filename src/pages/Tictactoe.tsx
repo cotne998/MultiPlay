@@ -1,5 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export default function Tictactoe() {
   const [squares, setSquares] = useState<(null | "X" | "O")[]>(
@@ -53,14 +55,22 @@ export default function Tictactoe() {
     setWinnerIndexes(null);
   };
 
+  useEffect(() => {
+    AOS.init({});
+  }, []);
+
   return (
     <section className="flex flex-col items-center gap-10 p-10 h-[100vh] xl:gap-20">
       <div className="flex gap-4 mb-6 ">
-        <h1 className="text-[#F15D22] text-[20px] md:text-[32px] font-bold title">
+        <h1
+          data-aos="zoom-in"
+          className="text-[#F15D22] text-[20px] md:text-[32px] font-bold title">
           Tic <span className="text-white">Tac</span> Toe
         </h1>
       </div>
-      <div className="grid grid-cols-3 gap-2 w-[170px] mx-auto md:w-[280px] md:gap-5">
+      <div
+        data-aos="zoom-in"
+        className="grid grid-cols-3 gap-2 w-[170px] mx-auto md:w-[280px] md:gap-5">
         {squares.map((value, i) => (
           <button
             key={i}
@@ -87,6 +97,7 @@ export default function Tictactoe() {
         ))}
       </div>
       <button
+        data-aos="zoom-in"
         onClick={handleReset}
         className="bg-[#F15D22] text-white font-semibold px-2 py-[2px] text-[14px] rounded-xl cursor-pointer w-[200px] hover:bg-[#f15d22c5] transition-[0.2s] md:text-[20px]">
         RESET

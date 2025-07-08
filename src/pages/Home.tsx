@@ -2,19 +2,28 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Swiper as SwiperType } from "swiper";
 import { Autoplay, Navigation } from "swiper/modules";
 import "swiper/css";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import data from "../data.json";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export default function Home() {
   const swiperRef = useRef<SwiperType | null>(null);
 
+  useEffect(() => {
+    AOS.init({});
+  }, []);
+
   return (
     <div className="p-5">
-      <h1 className="text-[22px] text-white font-semibold text-center">
+      <h1
+        data-aos="zoom-in"
+        className="text-[22px] text-white font-semibold text-center">
         <span className="text-[#F15D22]">GAMES</span> YOU CAN PLAY
       </h1>
-      <section className="relative xl:p-5">
+      <section data-aos="zoom-in" className="relative xl:p-5">
         <button
           className="absolute left-0 top-[50%]  translate-y-[-50%] cursor-pointer z-10"
           onClick={() => swiperRef.current?.slidePrev()}>
@@ -49,7 +58,7 @@ export default function Home() {
           modules={[Navigation, Autoplay]}>
           {data.map((item, idx) => (
             <SwiperSlide key={idx} className="h-full">
-              <div className="cursor-grab active:cursor-grabbing hover:scale-[1.04] transition-[0.2s] flex flex-col justify-between items-center gap-5 p-3 border-1 border-[#27dec000] rounded-[10px] bg-[#1e1e1e] shadow-[0_0_12px_2px_#f15d2278] hover:shadow-[0_0_12px_8px_#f15d228d]  xl:min-h-[600px] xl:p-8 xl:gap-8">
+              <motion.div className="cursor-grab active:cursor-grabbing hover:scale-[1.04] transition-[0.2s] flex flex-col justify-between items-center gap-5 p-3 border-1 border-[#27dec000] rounded-[10px] bg-[#1e1e1e] shadow-[0_0_12px_2px_#f15d2278] hover:shadow-[0_0_12px_8px_#f15d228d]  xl:min-h-[600px] xl:p-8 xl:gap-8">
                 <img
                   src={item.thumbnail}
                   alt="game thumbnail"
@@ -68,7 +77,7 @@ export default function Home() {
                   to={item.route}>
                   <button className="cursor-pointer">Play</button>
                 </Link>
-              </div>
+              </motion.div>
             </SwiperSlide>
           ))}
         </Swiper>

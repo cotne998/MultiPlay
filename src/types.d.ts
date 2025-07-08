@@ -1,4 +1,5 @@
 declare module "swiper/css";
+declare module "aos";
 
 interface IMenuContext {
   displayMenu: boolean;
